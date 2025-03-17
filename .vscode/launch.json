@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "start",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "start:dev"],
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}
