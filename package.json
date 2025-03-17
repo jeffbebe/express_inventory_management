@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -17,34 +17,50 @@
   "homepage": "https://github.com/jeffbebe/express_inventory_management#readme",
   "description": "",
   "dependencies": {
-    "@asteasolutions/zod-to-openapi": "7.3.0",
+    "@types/jest": "^29.5.14",
+    "axios": "^1.8.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "cors": "2.8.5",
     "dotenv": "16.4.7",
     "envalid": "8.0.0",
     "express": "^4.21.2",
-    "express-rate-limit": "7.5.0",
     "helmet": "8.0.0",
     "http-status-codes": "2.3.0",
+    "jest": "^29.7.0",
     "mongoose": "^8.12.1",
-    "pino": "9.6.0",
-    "pino-http": "10.4.0",
-    "swagger-ui-express": "5.0.1",
+    "nodemon": "^3.1.9",
+    "reflect-metadata": "^0.2.2",
+    "ts-jest": "^29.2.6",
     "zod": "3.24.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "@types/cors": "2.8.17",
     "@types/express": "5.0.0",
     "@types/node": "^22.13.10",
-    "@types/supertest": "6.0.2",
-    "@types/swagger-ui-express": "4.1.8",
-    "@vitest/coverage-v8": "3.0.8",
-    "pino-pretty": "13.0.0",
     "supertest": "7.0.0",
-    "tsup": "8.4.0",
     "tsx": "4.19.3",
-    "typescript": "5.8.2",
-    "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.0.8"
+    "typescript": "5.8.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "./",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/src/$1"
+    },
+    "testTimeout": 20000
   }
 }
